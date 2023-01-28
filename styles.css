@@ -1,0 +1,55 @@
+:root {
+  --background: black;
+  --foreground: white;
+
+  font-family: "Rubik", sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 1.5rem;
+  background-color: var(--background);
+  color: var(--foreground);
+}
+
+#gallery {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+}
+
+[data-content]:before {
+  content: attr(data-content);
+  position: absolute;
+  bottom: 0;
+  background-color: var(--foreground);
+  text-decoration: none;
+  color: var(--background);
+  font-weight: 600;
+  padding: 0.4rem 0.7rem 0.3rem 0.7rem;
+  border-top-right-radius: 1rem;
+  z-index: 1;
+}
+
+a {
+  text-decoration: none;
+  position: relative;
+  background-color: var(--foreground);
+  outline: 1px solid var(--foreground);
+  outline-offset: -1px;
+  border-radius: 1rem;
+  overflow: hidden;
+  filter: saturate(0);
+  transition: 500ms;
+}
+
+a > iframe {
+  aspect-ratio: 1;
+  border: none;
+  width: 100%;
+  display: block;
+}
+
+a:hover {
+  filter: saturate(1);
+}
