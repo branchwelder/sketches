@@ -22,7 +22,6 @@ function draw() {
     stroke(currentHue, 80, 80);
     fill(currentHue, 80, 80);
 
-    // Draw points and lines to make a square
     drawPoint(offset, 0);
     line(offset, 0, siz, offset);
     drawPoint(siz, offset);
